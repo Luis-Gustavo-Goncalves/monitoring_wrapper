@@ -1,0 +1,107 @@
+[
+  { "loja": "001", "ip": "192.168.2.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "002", "ip": "192.168.3.31", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "003", "ip": "192.168.4.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "004", "ip": "192.168.40.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "005", "ip": "192.168.205.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "006", "ip": "192.168.5.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "007", "ip": "192.168.6.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "008", "ip": "192.168.8.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "009", "ip": "192.168.9.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "012", "ip": "192.168.12.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "013", "ip": "192.168.13.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "014", "ip": "192.168.14.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "015", "ip": "192.168.15.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "016", "ip": "192.168.16.41", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "017", "ip": "192.168.7.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "018", "ip": "192.168.18.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "019", "ip": "192.168.19.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "020", "ip": "192.168.20.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "022", "ip": "192.168.22.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "023", "ip": "192.168.23.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "024", "ip": "192.168.24.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "025", "ip": "192.168.25.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "026", "ip": "192.168.26.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "027", "ip": "192.168.27.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "028", "ip": "192.168.28.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "030", "ip": "192.168.30.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "031", "ip": "192.168.31.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "032", "ip": "192.168.32.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "033", "ip": "192.168.33.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "035", "ip": "192.168.35.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "037", "ip": "192.168.37.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "038", "ip": "192.168.38.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "039", "ip": "192.168.39.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "040", "ip": "192.168.40.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "041", "ip": "192.168.41.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "042", "ip": "192.168.42.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "043", "ip": "192.168.43.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "044", "ip": "192.168.44.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "045", "ip": "192.168.45.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "047", "ip": "192.168.47.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "049", "ip": "192.168.49.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "050", "ip": "192.168.50.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "052", "ip": "192.168.11.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "053", "ip": "10.1.27.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "054", "ip": "192.168.54.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "055", "ip": "192.168.55.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "056", "ip": "192.168.56.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "057", "ip": "192.168.57.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "058", "ip": "192.168.58.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "059", "ip": "192.168.59.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "060", "ip": "192.168.60.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "061", "ip": "192.168.61.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "062", "ip": "192.168.62.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "063", "ip": "192.168.63.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "064", "ip": "192.168.64.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "065", "ip": "192.168.65.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "067", "ip": "192.168.67.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "068", "ip": "192.168.68.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "069", "ip": "192.168.69.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "070", "ip": "192.168.70.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "071", "ip": "192.168.71.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "072", "ip": "192.168.72.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "073", "ip": "192.168.73.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "074", "ip": "192.168.74.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "075", "ip": "192.168.75.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "076", "ip": "192.168.76.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "077", "ip": "192.168.77.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "078", "ip": "192.168.78.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "079", "ip": "192.168.79.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "080", "ip": "192.168.80.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+
+  { "loja": "085", "ip": "192.168.85.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "086", "ip": "192.168.86.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "087", "ip": "192.168.87.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "089", "ip": "192.168.89.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  
+  { "loja": "094", "ip": "192.168.94.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "095", "ip": "192.168.95.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "096", "ip": "192.168.96.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "097", "ip": "192.168.97.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "100", "ip": "192.168.100.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  
+  { "loja": "104", "ip": "192.168.104.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "105", "ip": "192.168.105.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "107", "ip": "192.168.107.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "108", "ip": "192.168.108.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "109", "ip": "192.168.109.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+ 
+  { "loja": "110", "ip": "192.168.110.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "111", "ip": "192.168.111.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
+  { "loja": "113", "ip": "192.168.1.9", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" }
+]
