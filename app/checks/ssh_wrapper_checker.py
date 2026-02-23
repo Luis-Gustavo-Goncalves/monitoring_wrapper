@@ -23,7 +23,7 @@ def verificar_wrapper(
 
     try:
         cliente = paramiko.SSHClient()
-        cliente.set_missing_host_key_policy(paramiko.AutoAddPolicy)
+        cliente.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
         cliente.connect(
             hostname=host,

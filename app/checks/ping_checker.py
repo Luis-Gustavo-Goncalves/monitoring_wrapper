@@ -24,7 +24,7 @@ def ping_host(host, timeout=1, tentativas=2):
                 comando = ['ping', '-n', '1', '-w', str(timeout * 1000), host]
             else:
                 # Linux / Unix
-                comando = ['ping', 'c', '1', '-w', str(timeout), host]            
+                comando = ['ping', '-c', '1', '-w', str(timeout), host]            
             
             resultado = subprocess.run(
                 comando,
