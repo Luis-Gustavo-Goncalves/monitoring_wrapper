@@ -1,75 +1,92 @@
-# Time fornece funções para trabalhar com o tempo, como medir o tempo da execução de um código e pausar a execução do programa
 import time
 import paramiko
-from app.checks.ssh_wrapper_checker import verificar_wrapper
-from app.core.state_manager import (
-    pode_tentar_restart,
-    registrar_tentativa,
-    resetar_estado
-)
 from app.core.logger import logger
 
 
 def tentar_restart_wrapper(
-    loja,
-    host,
-    usuario,
-    senha,
-    caminho_bin="/usr/socin/econect/conc/bin",
-    wait_seconds=10
-):
-    if not pode_tentar_restart(host):
-        logger.critical(
-            f"Wrapper instavel | host={host} | Wrapper instável — caiu novamente após restart automático"
-        )
-        return "FALHA_RESTART"
-
-    registrar_tentativa(host)
+    host: str,
+    usuario: str,
+    senha: str,
+    caminho_bin: str,
+    loja: str,
+    timeout: int = 10,
+) -> bool:
+    """
+    Executa restart REAL do wrapper:
+    - Login como econect
+    - sudo su (vira root)
+    - executa ./concentradorwrapper restart
+    """
 
     try:
         cliente = paramiko.SSHClient()
         cliente.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
         cliente.connect(
             hostname=host,
-            username=usuario,
-            password=senha,
-            timeout=10
+            username=usuario,   # econect
+            password=senha,     # econect
+            timeout=timeout,
         )
 
-        comandos = [
-            f"cd {caminho_bin} && ./concentradorwrapper stop",
-            f"cd {caminho_bin} && ./concentradorwrapper start"
-        ]
+        # 🔑 Shell interativo com PTY
+        shell = cliente.invoke_shell()
+        time.sleep(1)
 
-        for cmd in comandos:
-            stdin, stdout, stderr = cliente.exec_command(cmd)
-            stdout.channel.recv_exit_status()
+        def enviar(cmd, espera=1.5):
+            shell.send(cmd + "\n")
+            time.sleep(espera)
+            return shell.recv(65535).decode(errors="ignore")
+
+        # 1️⃣ sudo su
+        saida = enviar("sudo su", 1)
+
+        if "password" in saida.lower():
+            saida += enviar(senha, 2)
+
+        logger.debug(
+            "🔐 Elevação para root",
+            extra={"loja": loja, "host": host, "saida": saida},
+        )
+
+        # 2️⃣ cd no bin
+        enviar(f"cd {caminho_bin}", 1)
+
+        # 3️⃣ restart REAL
+        saida_restart = enviar("./concentradorwrapper restart", 6)
+
+        logger.debug(
+            "📄 Saída bruta do restart",
+            extra={
+                "loja": loja,
+                "host": host,
+                "saida": saida_restart,
+            },
+        )
 
         cliente.close()
 
-        time.sleep(wait_seconds)
-
-        status = verificar_wrapper(
-            host=host,
-            usuario=usuario,
-            senha=senha,
-            caminho_bin=caminho_bin
-        )
-
-        if status == "RODANDO":
+        # ✅ Confirmação REALISTA (igual terminal)
+        if (
+            "stopping" in saida_restart.lower()
+            and "starting" in saida_restart.lower()
+            and "pid" in saida_restart.lower()
+        ):
             logger.info(
-                f"Wrapper recuperado | host={host} | resetando contador de falhas"
+                "♻️ Restart completo executado como ROOT",
+                extra={"loja": loja, "host": host},
             )
-            resetar_estado(host)
-            return "RECUPERADO"
+            return True
 
-        logger.warning(
-            f"Wrapper ainda parado | host={host} | tentativa registrada"
+        logger.critical(
+            "⚠️ Restart executado, mas saída não confirma ciclo completo",
+            extra={"loja": loja, "host": host, "saida": saida_restart},
         )
-        return "FALHA_RESTART"
+        return False
 
-    except Exception as e:
-        logger.error(
-            f"Erro ao tentar restart | host={host} | erro={e}"
+    except Exception as erro:
+        logger.critical(
+            "❌ Falha crítica ao executar restart como root",
+            extra={"loja": loja, "host": host, "erro": str(erro)},
         )
-        return "ERRO_CONEXAO"
+        return False

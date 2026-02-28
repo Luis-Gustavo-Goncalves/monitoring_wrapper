@@ -1,0 +1,6 @@
+services:
+  monitoramento_concentradores:
+    build: .
+    container_name: monitoramento_concentradores
+    env_file:
+      - .env

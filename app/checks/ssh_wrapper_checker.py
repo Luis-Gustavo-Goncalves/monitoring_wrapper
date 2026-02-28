@@ -1,25 +1,22 @@
-''' Paramiko uma biblioteca que implementa o protocolo sshv2 para conexão, automação de tarefas administrativas, executando comandos remotos e transferência
-arquivos sftp
-'''
 import paramiko
+from app.core.logger import logger
+
 
 def verificar_wrapper(
-        host,
-        usuario,
-        senha,
-        caminho_bin='/usr/socin/econect/conc/bin',
-        comando_status='./concentradorwrapper status',
-        timeout=5
-):
-    '''
-    Verifica o status do wrapper via SSH:
+    host: str,
+    usuario: str,
+    senha: str,
+    caminho_bin: str,
+    timeout: int = 8,
+) -> str:
+    """
+    Verifica o status REAL do wrapper via SSH.
 
     Retorna:
-    - 'RODANDO'
-    - 'PARADO'
-    - 'ERRO_CONEXAO'
-    - 'ERRO_COMANDO'
-    '''
+    - 'RODANDO'      → confirmação explícita
+    - 'PARADO'       → confirmação explícita
+    - 'DESCONHECIDO' → qualquer falha ou saída ambígua
+    """
 
     try:
         cliente = paramiko.SSHClient()
@@ -29,32 +26,62 @@ def verificar_wrapper(
             hostname=host,
             username=usuario,
             password=senha,
-            timeout=timeout
+            timeout=timeout,
         )
 
-        comando = f'cd {caminho_bin} && {comando_status}'
-        stdin, stdout, stderr = cliente.exec_command(comando)
+        comando = f"cd {caminho_bin} && ./concentradorwrapper status"
+        _, stdout, stderr = cliente.exec_command(comando)
 
-        saida = stdout.read().decode().lower()
-        erro = stderr.read().decode().lower()
+        saida = stdout.read().decode(errors="ignore").lower().strip()
+        erro = stderr.read().decode(errors="ignore").lower().strip()
 
         cliente.close()
 
-        if erro:
-            return 'ERRO_COMANDO'
-        
-        # Ajuste conforme a saída real do comando
-        if 'not running' in saida:
-            return 'PARADO'
-        
-        if 'is running' in saida or 'ativo' in saida or 'started' in saida:
-            return 'RODANDO'
-        
-        return 'PARADO'
+        # 🔍 DEBUG CRÍTICO (para auditoria)
+        logger.debug(
+            "📄 Saída bruta do status do wrapper",
+            extra={
+                "host": host,
+                "saida": saida,
+                "erro": erro,
+            }
+        )
 
-    except paramiko.AuthenticationException:
-        return 'ERRO_CONEXAO'
-    except paramiko.SSHException:
-        return 'ERRO_CONEXAO'
-    except Exception:
-        return 'ERRO_CONEXAO' 
+        # Qualquer erro explícito → estado inseguro
+        if erro:
+            return "DESCONHECIDO"
+
+        # 🚫 PROVA DE PARADO
+        if any(palavra in saida for palavra in [
+            "not running",
+            "stopped",
+            "parado",
+            "não está em execução",
+        ]):
+            return "PARADO"
+
+        # ✅ PROVA DE RODANDO
+        if any(palavra in saida for palavra in [
+            "is running",
+            "running",
+            "ativo",
+            "started",
+        ]):
+            return "RODANDO"
+
+        # ⚠️ Qualquer outra coisa = inseguro
+        return "DESCONHECIDO"
+
+    except (
+        paramiko.AuthenticationException,
+        paramiko.SSHException,
+        TimeoutError,
+    ):
+        return "DESCONHECIDO"
+
+    except Exception as erro:
+        logger.error(
+            "❌ Erro inesperado ao verificar wrapper",
+            extra={"host": host, "erro": str(erro)},
+        )
+        return "DESCONHECIDO"
