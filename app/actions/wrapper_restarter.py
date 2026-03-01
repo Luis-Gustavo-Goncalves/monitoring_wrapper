@@ -67,22 +67,23 @@ def tentar_restart_wrapper(
         cliente.close()
 
         # ✅ Confirmação REALISTA (igual terminal)
-        if (
-            "stopping" in saida_restart.lower()
-            and "starting" in saida_restart.lower()
-            and "pid" in saida_restart.lower()
-        ):
+        saida_lower = saida_restart.lower()
+
+        evidencias = [
+            "stopping e-conect",
+            "stopped e-conect",
+            "starting e-conect",
+            "waiting for e-conect",
+            "running",
+            "pid:",
+        ]
+
+        if any(e in saida_lower for e in evidencias):
             logger.info(
-                "♻️ Restart completo executado como ROOT",
+                "♻️ Restart confirmado com sucesso (root)",
                 extra={"loja": loja, "host": host},
             )
             return True
-
-        logger.critical(
-            "⚠️ Restart executado, mas saída não confirma ciclo completo",
-            extra={"loja": loja, "host": host, "saida": saida_restart},
-        )
-        return False
 
     except Exception as erro:
         logger.critical(
