@@ -103,5 +103,5 @@
  
   { "loja": "110", "ip": "192.168.110.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
   { "loja": "111", "ip": "192.168.111.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" },
-  { "loja": "113", "ip": "192.168.1.9", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" }
+  { "loja": "113", "ip": "192.168.113.21", "usuario": "econect", "senha": "econect", "caminho_bin": "/usr/socin/econect/conc/bin" }
 ]

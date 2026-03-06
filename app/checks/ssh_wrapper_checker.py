@@ -37,7 +37,7 @@ def verificar_wrapper(
 
         cliente.close()
 
-        # 🔍 DEBUG CRÍTICO (para auditoria)
+        # DEBUG CRÍTICO (para auditoria)
         logger.debug(
             "📄 Saída bruta do status do wrapper",
             extra={
@@ -51,7 +51,7 @@ def verificar_wrapper(
         if erro:
             return "DESCONHECIDO"
 
-        # 🚫 PROVA DE PARADO
+        # PROVA DE PARADO
         if any(palavra in saida for palavra in [
             "not running",
             "stopped",
@@ -60,7 +60,7 @@ def verificar_wrapper(
         ]):
             return "PARADO"
 
-        # ✅ PROVA DE RODANDO
+        # PROVA DE RODANDO
         if any(palavra in saida for palavra in [
             "is running",
             "running",
@@ -69,7 +69,7 @@ def verificar_wrapper(
         ]):
             return "RODANDO"
 
-        # ⚠️ Qualquer outra coisa = inseguro
+        # Qualquer outra coisa = inseguro
         return "DESCONHECIDO"
 
     except (

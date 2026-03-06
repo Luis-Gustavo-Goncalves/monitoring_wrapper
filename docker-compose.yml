@@ -4,3 +4,5 @@ services:
     container_name: monitoramento_concentradores
     env_file:
       - .env
+    environment:
+      - TZ=America/Sao_Paulo

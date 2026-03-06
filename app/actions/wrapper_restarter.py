@@ -29,7 +29,7 @@ def tentar_restart_wrapper(
             timeout=timeout,
         )
 
-        # 🔑 Shell interativo com PTY
+        # Shell interativo com PTY
         shell = cliente.invoke_shell()
         time.sleep(1)
 
@@ -38,7 +38,7 @@ def tentar_restart_wrapper(
             time.sleep(espera)
             return shell.recv(65535).decode(errors="ignore")
 
-        # 1️⃣ sudo su
+        # sudo su
         saida = enviar("sudo su", 1)
 
         if "password" in saida.lower():
@@ -49,10 +49,10 @@ def tentar_restart_wrapper(
             extra={"loja": loja, "host": host, "saida": saida},
         )
 
-        # 2️⃣ cd no bin
+        # cd no bin
         enviar(f"cd {caminho_bin}", 1)
 
-        # 3️⃣ restart REAL
+        # restart REAL
         saida_restart = enviar("./concentradorwrapper restart", 6)
 
         logger.debug(
@@ -66,7 +66,7 @@ def tentar_restart_wrapper(
 
         cliente.close()
 
-        # ✅ Confirmação REALISTA (igual terminal)
+        # Confirmação REALISTA (igual terminal)
         saida_lower = saida_restart.lower()
 
         evidencias = [
